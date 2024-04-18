@@ -7,12 +7,6 @@ from django.urls import reverse
 from django.utils.text import slugify
 
 
-def rand_slug():
-    return ''.join(
-        random.choice(string.ascii_letters + string.digits) for _ in range(3)
-    )
-
-
 class Category(models.Model):
     """Класс категории"""
     name = models.CharField(
@@ -51,6 +45,14 @@ class Category(models.Model):
             full_path.append(k.name)
             k = k.parent
         return ' -> '.join(full_path[::-1])
+
+    @staticmethod
+    def _rand_slug():
+        return ''.join(
+            random.choice(
+                string.ascii_lowercase + string.digits
+                ) for _ in range(3)
+        )
 
     def save(self, *args, **kwargs):
         if not self.slug:
