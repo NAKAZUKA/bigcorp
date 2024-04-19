@@ -131,7 +131,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '{% url "cart:delete-to-cart" %}',
+            url: '{% url "cart:delete_to_cart" %}',
             data: {
                 product_id: $(this).data('index'),
                 csrfmiddlewaretoken: '{{ csrf_token }}',
@@ -156,7 +156,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '{% url "cart:update-to-cart" %}',
+            url: '{% url "cart:update_to_cart" %}',
             data: {
                 product_id: $(this).data('index'),
                 product_qty: $('#select'+product_id+ ' option:selected').text(),

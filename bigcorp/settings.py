@@ -21,6 +21,7 @@ INSTALLED_APPS = [
 
     # libraries
     'sorl.thumbnail',
+    'mathfilters',
 
     # apps
     'shop.apps.ShopConfig',
