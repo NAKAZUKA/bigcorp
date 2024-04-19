@@ -22,10 +22,14 @@ INSTALLED_APPS = [
     # libraries
     'sorl.thumbnail',
     'mathfilters',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'django_email_verification',
 
     # apps
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +72,8 @@ DATABASES = {
     }
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -98,4 +104,6 @@ STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CRYSPY_TEMPLATE_PACK = 'bootstrap5'
+
+CRYSPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
